@@ -1,0 +1,35 @@
+package app;
+
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class Alarm {
+	private Timer timer;
+	private String ringtoneFilePath;
+
+	public Alarm(String ringtoneFilePath) {
+		this.timer = new Timer();
+		this.ringtoneFilePath = ringtoneFilePath;
+	}
+
+	public void setAlarm(Date date, TimerTask task) {
+		timer.schedule(task, date);
+	}
+
+	public void setRepeatingAlarm(Date date, long interval, TimerTask task) {
+		timer.scheduleAtFixedRate(task, date, interval);
+	}
+
+	public void cancelAlarm() {
+		timer.cancel();
+	}
+
+	public String getRingtoneFilePath() {
+		return ringtoneFilePath;
+	}
+
+	public void setRingtoneFilePath(String ringtoneFilePath) {
+		this.ringtoneFilePath = ringtoneFilePath;
+	}
+}

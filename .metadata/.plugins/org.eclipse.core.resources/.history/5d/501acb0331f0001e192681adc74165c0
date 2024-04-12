@@ -1,0 +1,27 @@
+package app;
+
+import javazoom.jl.player.Player;
+
+public class MP3Player {
+    private String filePath;
+
+    public MP3Player(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public void play() {
+        try {
+            Player player = new Player(getClass().getResourceAsStream("/Application/Ringtone/galaxy_ringtones.mp3"));
+            player.play();
+        } catch (Exception e) {
+            System.out.println("Error playing MP3 file: " + e);
+            e.printStackTrace();
+        }
+    }
+
+//    public static void main(String[] args) {
+//        // Replace "your_file_name.mp3" with the name of your MP3 file
+//        MP3Player mp3Player = new MP3Player("/path/to/your_file_name.mp3");
+//        mp3Player.play();
+//    }
+}

@@ -1,0 +1,201 @@
+package app;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+import java.awt.Component;
+import javax.swing.JTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JPasswordField;
+
+public class UserCridentials extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField usernameTXT;
+	private JTextField ringtone;
+	private JPasswordField passwordField;
+	private JTextField emailTXT;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UserCridentials frame = new UserCridentials();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UserCridentials() {
+		setResizable(false);
+		setBackground(Color.DARK_GRAY);
+		setTitle("User Credentials");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 867, 505);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.DARK_GRAY);
+		panel.setBounds(0, 0, 203, 466);
+		contentPane.add(panel);
+
+		JLabel lblNewLabel = new JLabel("User Credentials");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(0, 11, 203, 46);
+		panel.add(lblNewLabel);
+
+		JButton btnBack = new JButton("Back");
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new ApplicationMain().setVisible(true);
+				dispose();
+			}
+		});
+		btnBack.setForeground(Color.WHITE);
+		btnBack.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setBounds(0, 409, 203, 46);
+		panel.add(btnBack);
+		
+		JButton btnDeleteEvent = new JButton("Event");
+		btnDeleteEvent.setEnabled(false);
+		btnDeleteEvent.setForeground(Color.WHITE);
+		btnDeleteEvent.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnDeleteEvent.setBackground(Color.DARK_GRAY);
+		btnDeleteEvent.setBounds(0, 58, 203, 46);
+		panel.add(btnDeleteEvent);
+		
+		JButton btnChangeCr = new JButton("Change Credentials");
+		btnChangeCr.setForeground(Color.WHITE);
+		btnChangeCr.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr.setBackground(Color.DARK_GRAY);
+		btnChangeCr.setBounds(0, 103, 203, 46);
+		panel.add(btnChangeCr);
+		
+		JButton btnChangeCr_1_2 = new JButton("User Profile");
+		btnChangeCr_1_2.setEnabled(false);
+		btnChangeCr_1_2.setForeground(Color.WHITE);
+		btnChangeCr_1_2.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1_2.setBackground(Color.DARK_GRAY);
+		btnChangeCr_1_2.setBounds(0, 148, 203, 46);
+		panel.add(btnChangeCr_1_2);
+		
+		JButton btnChangeCr_1_1 = new JButton("User Feedback");
+		btnChangeCr_1_1.setEnabled(false);
+		btnChangeCr_1_1.setForeground(Color.WHITE);
+		btnChangeCr_1_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1_1.setBackground(Color.DARK_GRAY);
+		btnChangeCr_1_1.setBounds(0, 193, 203, 46);
+		panel.add(btnChangeCr_1_1);
+		
+		JButton btnChangeCr_1_1_1 = new JButton("Help");
+		btnChangeCr_1_1_1.setEnabled(false);
+		btnChangeCr_1_1_1.setForeground(Color.WHITE);
+		btnChangeCr_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1_1_1.setBackground(Color.DARK_GRAY);
+		btnChangeCr_1_1_1.setBounds(0, 238, 203, 46);
+		panel.add(btnChangeCr_1_1_1);
+
+		JLabel lblEventPlan = new JLabel("Username:");
+		lblEventPlan.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblEventPlan.setBackground(Color.WHITE);
+		lblEventPlan.setBounds(358, 99, 96, 27);
+		contentPane.add(lblEventPlan);
+
+		usernameTXT = new JTextField();
+		usernameTXT.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		usernameTXT.setColumns(10);
+		usernameTXT.setBackground(Color.WHITE);
+		usernameTXT.setBounds(473, 99, 208, 27);
+		contentPane.add(usernameTXT);
+
+		JLabel colegeIdERROR = new JLabel("");
+		colegeIdERROR.setHorizontalAlignment(SwingConstants.CENTER);
+		colegeIdERROR.setBounds(473, 131, 208, 14);
+		contentPane.add(colegeIdERROR);
+
+		Alarm a = new Alarm("cartoonic_music_call_alert_tone_ringtone_galaxy_ringtones.mp3", null, null);
+		Alarm a1 = new Alarm("galaxy_ringtones.mp3", null, null);
+		Database.alarms.add(a);
+		Database.alarms.add(a1);
+
+		// Populate the JComboBox with alarm names from the alarmArrayList
+		for (Alarm alarm : Database.alarms) {
+			ringtoneComboBox.addItem(alarm.getRingtoneFilePath());
+		}
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPassword.setBackground(Color.WHITE);
+		lblPassword.setBounds(358, 156, 96, 27);
+		contentPane.add(lblPassword);
+		
+		JLabel colegeIdERROR_1 = new JLabel("");
+		colegeIdERROR_1.setHorizontalAlignment(SwingConstants.CENTER);
+		colegeIdERROR_1.setBounds(473, 188, 208, 14);
+		contentPane.add(colegeIdERROR_1);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(473, 156, 208, 27);
+		contentPane.add(passwordField);
+		
+		JLabel lblEventPlan_1 = new JLabel("Email:");
+		lblEventPlan_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblEventPlan_1.setBackground(Color.WHITE);
+		lblEventPlan_1.setBounds(358, 213, 96, 27);
+		contentPane.add(lblEventPlan_1);
+		
+		emailTXT = new JTextField();
+		emailTXT.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		emailTXT.setColumns(10);
+		emailTXT.setBackground(Color.WHITE);
+		emailTXT.setBounds(473, 213, 208, 27);
+		contentPane.add(emailTXT);
+		
+		JLabel colegeIdERROR_2 = new JLabel("");
+		colegeIdERROR_2.setHorizontalAlignment(SwingConstants.CENTER);
+		colegeIdERROR_2.setBounds(473, 245, 208, 14);
+		contentPane.add(colegeIdERROR_2);
+		
+		JButton btnUpdateCredentials = new JButton("Update Credentials");
+		btnUpdateCredentials.setForeground(Color.WHITE);
+		btnUpdateCredentials.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnUpdateCredentials.setBackground(Color.DARK_GRAY);
+		btnUpdateCredentials.setBounds(424, 306, 203, 46);
+		contentPane.add(btnUpdateCredentials);
+	}
+}

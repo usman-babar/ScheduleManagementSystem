@@ -1,0 +1,16 @@
+package app;
+
+import java.util.ArrayList;
+
+public class Database {
+
+	// cover only added events
+	public static ArrayList<Events> myEvents = new ArrayList<Events>();
+
+	// cover only added users
+	public static ArrayList<User> users = new ArrayList<User>();
+
+	// cover only added alarms
+	public static ArrayList<Alarm> alarms = new ArrayList<Alarm>();
+
+}

@@ -1,0 +1,18 @@
+package app;
+
+import java.util.ArrayList;
+
+public class Database {
+
+	// cover all events
+	public ArrayList<Events> allEvents = new ArrayList<Events>();
+	// cover only added events
+	public ArrayList<Events> myEvents = new ArrayList<Events>();
+
+	// cover only added users
+	public ArrayList<User> users = new ArrayList<User>();
+
+	// cover only added alarms
+	public ArrayList<Alarm> alarms = new ArrayList<Alarm>();
+		
+}

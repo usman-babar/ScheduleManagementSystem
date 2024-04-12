@@ -1,0 +1,52 @@
+package app;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.time.LocalTime;
+
+public class Alarm {
+    private Timer timer;
+    private String ringtoneFilePath;
+    private LocalTime startTime;
+    private LocalTime endTime;
+
+    public Alarm(String ringtoneFilePath, String startTime, String endTime) {
+        this.timer = new Timer();
+        this.ringtoneFilePath = ringtoneFilePath;
+        this.startTime = LocalTime.parse(startTime);
+        this.endTime = LocalTime.parse(endTime);
+    }
+
+    public void setAlarm() {
+        long delay = calculateDelay();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                // Play the alarm ringtone
+                playRingtone();
+            }
+        }, delay);
+    }
+
+    private long calculateDelay() {
+        LocalTime currentTime = LocalTime.now();
+        long delay;
+        if (currentTime.isAfter(startTime) && currentTime.isBefore(endTime)) {
+            delay = 0; // If current time is between start and end time, alarm triggers immediately
+        } else if (currentTime.isBefore(startTime)) {
+            delay = startTime.toSecondOfDay() - currentTime.toSecondOfDay(); // Delay until start time
+        } else {
+            delay = startTime.toSecondOfDay() - currentTime.toSecondOfDay() + 24 * 60 * 60; // Delay until next day's start time
+        }
+        return delay * 1000; // Convert delay to milliseconds
+    }
+
+    private void playRingtone() {
+        // Add code to play the ringtone from the specified file path
+        System.out.println("Alarm ringing! Playing ringtone from: " + ringtoneFilePath);
+    }
+
+    public static void main(String[] args) {
+        Alarm alarm = new Alarm("/Application/Ringtone/cartoonic_music_call_alert_tone_ringtone_galaxy_ringtones.mp3", "20:00", "23:59");
+        alarm.setAlarm();
+    }
+}

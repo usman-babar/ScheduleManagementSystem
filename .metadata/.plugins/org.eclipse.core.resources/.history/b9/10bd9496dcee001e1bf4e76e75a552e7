@@ -1,0 +1,179 @@
+package app;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
+
+public class ApplicationMain extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPasswordField passwordField;
+	private JTextField collegeIDTxt;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ApplicationMain frame = new ApplicationMain();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ApplicationMain() {
+		setBackground(Color.DARK_GRAY);
+		setTitle("User Login");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 812, 505);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.DARK_GRAY);
+		panel.setBounds(0, 0, 203, 466);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("User Login");
+		lblNewLabel.setBackground(Color.DARK_GRAY);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel.setBounds(0, 11, 203, 46);
+		panel.add(lblNewLabel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "JPanel title", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		panel_1.setBounds(-6, 52, 215, 373);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JButton btnAddEvent = new JButton("Add Event");
+		btnAddEvent.setBounds(6, 16, 203, 46);
+		panel_1.add(btnAddEvent);
+		btnAddEvent.setForeground(Color.WHITE);
+		btnAddEvent.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnAddEvent.setBackground(Color.DARK_GRAY);
+		
+		JButton btnEditEvent = new JButton("Edit Event");
+		btnEditEvent.setBounds(6, 59, 203, 46);
+		panel_1.add(btnEditEvent);
+		btnEditEvent.setForeground(Color.WHITE);
+		btnEditEvent.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnEditEvent.setBackground(Color.DARK_GRAY);
+		
+		JButton btnDeleteEvent = new JButton("Delete Event");
+		btnDeleteEvent.setBounds(6, 102, 203, 46);
+		panel_1.add(btnDeleteEvent);
+		btnDeleteEvent.setForeground(Color.WHITE);
+		btnDeleteEvent.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnDeleteEvent.setBackground(Color.DARK_GRAY);
+		
+		JButton btnViewTimetable = new JButton("View Timetable");
+		btnViewTimetable.setBounds(6, 146, 203, 46);
+		panel_1.add(btnViewTimetable);
+		btnViewTimetable.setForeground(Color.WHITE);
+		btnViewTimetable.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnViewTimetable.setBackground(Color.DARK_GRAY);
+		
+		JButton btnChangeCr = new JButton("Change Credentials");
+		btnChangeCr.setBounds(6, 190, 203, 46);
+		panel_1.add(btnChangeCr);
+		btnChangeCr.setForeground(Color.WHITE);
+		btnChangeCr.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr.setBackground(Color.DARK_GRAY);
+		
+		JButton btnChangeCr_1 = new JButton("Change Credentials");
+		btnChangeCr_1.setBounds(6, 234, 203, 46);
+		panel_1.add(btnChangeCr_1);
+		btnChangeCr_1.setForeground(Color.WHITE);
+		btnChangeCr_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1.setBackground(Color.DARK_GRAY);
+		
+		JButton btnChangeCr_1_1 = new JButton("Change Credentials");
+		btnChangeCr_1_1.setBounds(6, 278, 203, 46);
+		panel_1.add(btnChangeCr_1_1);
+		btnChangeCr_1_1.setForeground(Color.WHITE);
+		btnChangeCr_1_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1_1.setBackground(Color.DARK_GRAY);
+		
+		JButton btnChangeCr_1_1_1 = new JButton("Change Credentials");
+		btnChangeCr_1_1_1.setBounds(6, 321, 203, 46);
+		panel_1.add(btnChangeCr_1_1_1);
+		btnChangeCr_1_1_1.setForeground(Color.WHITE);
+		btnChangeCr_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnChangeCr_1_1_1.setBackground(Color.DARK_GRAY);
+		
+		JLabel lblCollegeId = new JLabel("College ID:");
+		lblCollegeId.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblCollegeId.setBackground(Color.WHITE);
+		lblCollegeId.setBounds(259, 160, 96, 27);
+		contentPane.add(lblCollegeId);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(374, 226, 208, 27);
+		contentPane.add(passwordField);
+		
+		JLabel passwordTxt = new JLabel("Password:");
+		passwordTxt.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		passwordTxt.setBackground(Color.WHITE);
+		passwordTxt.setBounds(259, 226, 96, 27);
+		contentPane.add(passwordTxt);
+		
+		collegeIDTxt = new JTextField();
+		collegeIDTxt.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		collegeIDTxt.setColumns(10);
+		collegeIDTxt.setBackground(Color.WHITE);
+		collegeIDTxt.setBounds(374, 160, 208, 27);
+		contentPane.add(collegeIDTxt);
+		
+		JLabel colegeIdERROR = new JLabel("");
+		colegeIdERROR.setHorizontalAlignment(SwingConstants.CENTER);
+		colegeIdERROR.setBounds(374, 192, 208, 14);
+		contentPane.add(colegeIdERROR);
+		
+		JLabel passwordERROR = new JLabel("");
+		passwordERROR.setHorizontalAlignment(SwingConstants.CENTER);
+		passwordERROR.setBounds(374, 256, 208, 14);
+		contentPane.add(passwordERROR);
+		
+		JButton btnNewButton = new JButton("Login");
+		btnNewButton.setBackground(Color.DARK_GRAY);
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnNewButton.setBounds(351, 304, 110, 38);
+		contentPane.add(btnNewButton);
+		
+		JButton btnBack = new JButton("Sign Up");
+		btnBack.setForeground(Color.WHITE);
+		btnBack.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setBounds(351, 353, 110, 38);
+		contentPane.add(btnBack);
+	}
+}

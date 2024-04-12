@@ -1,0 +1,9 @@
+package app;
+
+import java.util.ArrayList;
+
+public class Database {
+
+	public ArrayList<Events> events = new ArrayList<Events>();
+	
+}

@@ -1,0 +1,13 @@
+package app;
+
+import java.util.ArrayList;
+
+public class Database {
+
+	// cover only added users
+	public static ArrayList<User> users = new ArrayList<User>();
+
+	// cover only added users
+	public static ArrayList<User> users = new ArrayList<User>();
+
+}

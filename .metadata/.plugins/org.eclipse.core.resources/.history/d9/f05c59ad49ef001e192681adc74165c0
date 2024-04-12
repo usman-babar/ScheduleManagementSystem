@@ -1,0 +1,39 @@
+package app;
+
+public class UserEvent {
+
+	private User u;
+	private Events e;
+	private Alarm a;
+
+	public UserEvent(User u, Events e, Alarm a) {
+		this.u = u;
+		this.e = e;
+		this.a = a;
+	}
+
+	public User getU() {
+		return u;
+	}
+
+	public void setU(User u) {
+		this.u = u;
+	}
+
+	public Events getE() {
+		return e;
+	}
+
+	public void setE(Events e) {
+		this.e = e;
+	}
+
+	public Alarm getA() {
+		return a;
+	}
+
+	public void setA(Alarm a) {
+		this.a = a;
+	}
+
+}
